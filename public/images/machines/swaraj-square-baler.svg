@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="balerSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="60%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fde047"/>
+    </linearGradient>
+    <linearGradient id="stubbleField" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ca8a04"/>
+      <stop offset="40%" stop-color="#a16207"/>
+      <stop offset="100%" stop-color="#713f12"/>
+    </linearGradient>
+    <linearGradient id="swarajBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="60%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="strawBale" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <filter id="balerShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Sky and Golden Harvest Stubble Field -->
+  <rect width="800" height="320" fill="url(#balerSky)"/>
+  <rect y="310" width="800" height="190" fill="url(#stubbleField)"/>
+  <ellipse cx="400" cy="455" rx="360" ry="24" fill="#451a03" opacity="0.5"/>
+
+  <!-- Field Straw Windrows (Cut straw rows lying on ground) -->
+  <path d="M 0 330 Q 150 325 300 335 T 600 340 L 800 340 L 800 355 L 0 355 Z" fill="#eab308" opacity="0.6"/>
+  <path d="M 0 355 Q 200 350 400 360 T 800 360 L 800 380 L 0 380 Z" fill="#ca8a04" opacity="0.7"/>
+
+  <!-- Swaraj Square Baler Assembly -->
+  <g filter="url(#balerShadow)" transform="translate(60, 20)">
+    <!-- Front Tow Hitch Tongue & PTO Drive Shaft -->
+    <polygon points="120,310 30,340 30,350 120,325" fill="#334155"/>
+    <circle cx="25" cy="345" r="7" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+    <!-- Yellow PTO safety shield shaft -->
+    <rect x="35" y="325" width="100" height="12" rx="3" fill="#eab308" transform="rotate(-15 35 325)"/>
+
+    <!-- Front Straw Pickup Reel (Rotary tines gathering straw from field) -->
+    <g transform="translate(130, 290)">
+      <circle cx="35" cy="45" r="32" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+      <!-- Spring steel gathering tines -->
+      <line x1="35" y1="13" x2="35" y2="77" stroke="#94a3b8" stroke-width="3"/>
+      <line x1="3" y1="45" x2="67" y2="45" stroke="#94a3b8" stroke-width="3"/>
+      <line x1="12" y1="22" x2="58" y2="68" stroke="#94a3b8" stroke-width="3"/>
+      <line x1="12" y1="68" x2="58" y2="22" stroke="#94a3b8" stroke-width="3"/>
+      <!-- Straw deflector windshield bands -->
+      <path d="M 10 15 C 30 5 60 15 70 35" stroke="#ea580c" stroke-width="4" fill="none"/>
+    </g>
+
+    <!-- Baler Main Box Compaction Chamber Body -->
+    <rect x="190" y="150" width="340" height="170" rx="8" fill="url(#swarajBlue)" stroke="#0369a1" stroke-width="3"/>
+    <!-- Upper Flywheel & Knotter Service Hatch -->
+    <path d="M 220 150 L 320 110 L 400 110 L 400 150 Z" fill="#0284c7"/>
+    <circle cx="270" cy="180" r="34" fill="#334155" stroke="#0f172a" stroke-width="4"/>
+    <circle cx="270" cy="180" r="16" fill="#facc15"/>
+
+    <!-- Knotter Bay (Double Knotters tying twine strings) -->
+    <rect x="360" y="125" width="60" height="30" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="390" y="145" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#0369a1" text-anchor="middle">KNOTTERS</text>
+
+    <!-- Side Inspection Panels & Swaraj Branding -->
+    <rect x="260" y="220" width="230" height="55" rx="5" fill="#ffffff"/>
+    <text x="375" y="248" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="#0369a1" text-anchor="middle">SWARAJ</text>
+    <text x="375" y="266" font-family="Arial, sans-serif" font-weight="800" font-size="11" fill="#ea580c" text-anchor="middle">SQUARE BALER 1290</text>
+    <!-- Accent Orange Stripes -->
+    <line x1="190" y1="210" x2="530" y2="210" stroke="#f97316" stroke-width="6"/>
+
+    <!-- Tandem Heavy Axle Wheels (Dual agricultural tires) -->
+    <g transform="translate(340, 340)">
+      <circle cx="0" cy="0" r="44" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="0" cy="0" r="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#0369a1"/>
+    </g>
+    <g transform="translate(425, 340)">
+      <circle cx="0" cy="0" r="44" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="0" cy="0" r="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#0369a1"/>
+    </g>
+
+    <!-- Rear Bale Chamber Extension & Roller Chute -->
+    <polygon points="530,220 640,240 640,300 530,300" fill="#075985"/>
+    <!-- Foldable Chute Extension -->
+    <line x1="640" y1="285" x2="710" y2="330" stroke="#f97316" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Freshly Formed Square Straw Bale (Exiting the chute!) -->
+    <g transform="translate(560, 215)">
+      <!-- Compacted rectangular straw block -->
+      <polygon points="10,10 75,5 110,35 45,40" fill="url(#strawBale)" stroke="#a16207" stroke-width="1.5"/>
+      <polygon points="45,40 110,35 110,75 45,80" fill="url(#strawBale)" stroke="#a16207" stroke-width="1.5"/>
+      <!-- Straw texture flecks -->
+      <line x1="55" y1="50" x2="95" y2="48" stroke="#fef08a" stroke-width="1.5"/>
+      <line x1="50" y1="65" x2="100" y2="62" stroke="#fef08a" stroke-width="1.5"/>
+      <!-- Tight binding twine loops -->
+      <line x1="65" y1="38" x2="65" y2="79" stroke="#ef4444" stroke-width="2.5"/>
+      <line x1="90" y1="36" x2="90" y2="77" stroke="#ef4444" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- Spec badge -->
+  <g transform="translate(40, 40)">
+    <rect width="210" height="54" rx="10" fill="#0f172a" opacity="0.9"/>
+    <text x="16" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">Swaraj Square Baler 1290</text>
+    <text x="16" y="42" font-family="Arial, sans-serif" font-size="11" fill="#facc15">Paddy Straw Specialist • 110 Bales/hr</text>
+  </g>
+</svg>

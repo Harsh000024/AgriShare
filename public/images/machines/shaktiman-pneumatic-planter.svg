@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradPlanter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="60%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#fef9c3"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="30%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#3b1a0e"/>
+    </linearGradient>
+    <linearGradient id="shaktimanRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="60%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="hopperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="planterShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Sky and Soil -->
+  <rect width="800" height="340" fill="url(#skyGradPlanter)"/>
+  <rect y="335" width="800" height="165" fill="#451a03"/>
+  <!-- Prepared seedbed texture -->
+  <ellipse cx="400" cy="450" rx="380" ry="25" fill="#291204" opacity="0.6"/>
+  <path d="M 0 350 Q 200 345 400 350 T 800 350 L 800 370 L 0 370 Z" fill="#78350f" opacity="0.4"/>
+
+  <!-- Planter Machine Assembly -->
+  <g filter="url(#planterShadow)">
+    <!-- Main Tool Bar / Steel Box Frame (Heavy duty rectangular tube) -->
+    <rect x="70" y="240" width="660" height="24" rx="4" fill="url(#shaktimanRed)" stroke="#7f1d1d" stroke-width="2"/>
+    <line x1="70" y1="248" x2="730" y2="248" stroke="#f87171" stroke-width="2"/>
+
+    <!-- Central 3-Point Mast & A-Frame Hitch -->
+    <polygon points="340,240 400,140 460,240" fill="none" stroke="url(#shaktimanRed)" stroke-width="14" stroke-linejoin="round"/>
+    <polygon points="350,240 400,150 450,240" fill="#1e293b" opacity="0.2"/>
+    <!-- Top hitch link clevis -->
+    <circle cx="400" cy="140" r="14" fill="#64748b" stroke="#334155" stroke-width="3"/>
+    <circle cx="400" cy="140" r="6" fill="#0f172a"/>
+    <!-- Central Vacuum Blower Turbine (Pneumatic fan unit driven by PTO) -->
+    <circle cx="400" cy="210" r="38" fill="url(#metalDark)" stroke="#475569" stroke-width="3"/>
+    <circle cx="400" cy="210" r="28" fill="#1e293b"/>
+    <circle cx="400" cy="210" r="14" fill="#dc2626"/>
+    <!-- Blower manifold pipes distributing suction to row units -->
+    <path d="M 400 240 L 400 260 M 375 230 L 160 260 M 425 230 L 640 260" stroke="#0284c7" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+    <!-- Gauge / Depth Transport Wheels -->
+    <g transform="translate(180, 255)">
+      <rect x="0" y="0" width="16" height="70" rx="3" fill="#334155"/>
+      <circle cx="8" cy="85" r="32" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="8" cy="85" r="18" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+      <circle cx="8" cy="85" r="7" fill="#dc2626"/>
+      <!-- Tire treads -->
+      <line x1="-24" y1="85" x2="-14" y2="85" stroke="#475569" stroke-width="4"/>
+      <line x1="30" y1="85" x2="40" y2="85" stroke="#475569" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(590, 255)">
+      <rect x="0" y="0" width="16" height="70" rx="3" fill="#334155"/>
+      <circle cx="8" cy="85" r="32" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="8" cy="85" r="18" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+      <circle cx="8" cy="85" r="7" fill="#dc2626"/>
+      <!-- Tire treads -->
+      <line x1="-24" y1="85" x2="-14" y2="85" stroke="#475569" stroke-width="4"/>
+      <line x1="30" y1="85" x2="40" y2="85" stroke="#475569" stroke-width="4"/>
+    </g>
+
+    <!-- Individual Precision Planter Row Units (8 depicted across the bar) -->
+    <!-- Unit 1 -->
+    <g transform="translate(100, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <!-- Seed metering disc housing -->
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <!-- Opener double-disc coulters cutting furrow in soil -->
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <!-- Press V-wheels closing soil over seeds -->
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 2 -->
+    <g transform="translate(170, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 3 -->
+    <g transform="translate(245, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 4 -->
+    <g transform="translate(320, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 5 -->
+    <g transform="translate(440, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 6 -->
+    <g transform="translate(515, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 7 -->
+    <g transform="translate(585, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Unit 8 -->
+    <g transform="translate(655, 160)">
+      <rect x="5" y="0" width="36" height="50" rx="6" fill="url(#hopperGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+      <polygon points="5,50 41,50 31,75 15,75" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <rect x="2" y="-4" width="42" height="8" rx="2" fill="#e11d48"/>
+      <circle cx="23" cy="85" r="14" fill="#334155"/>
+      <circle cx="16" cy="195" r="28" fill="#64748b" stroke="#334155" stroke-width="2"/>
+      <circle cx="28" cy="195" r="28" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="23" cy="210" rx="14" ry="7" fill="#0f172a"/>
+    </g>
+
+    <!-- Hydraulic Row Marker Arms on side (Folded up) -->
+    <line x1="75" y1="245" x2="30" y2="120" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="25" cy="110" r="18" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+    <line x1="725" y1="245" x2="770" y2="120" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="775" cy="110" r="18" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+  </g>
+
+  <!-- Brand badge -->
+  <g transform="translate(40, 40)">
+    <rect width="210" height="54" rx="10" fill="#0f172a" opacity="0.9"/>
+    <text x="16" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">Shaktiman PlanterMaster</text>
+    <text x="16" y="42" font-family="Arial, sans-serif" font-size="11" fill="#f87171">16-Row Pneumatic Precision Seeder</text>
+  </g>
+</svg>

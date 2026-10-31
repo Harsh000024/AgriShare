@@ -1,0 +1,97 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // User Profile Validation & Access
+    function isValidUserProfile(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+             data.phone is string && data.phone.size() <= 25 &&
+             data.role in ['farmer', 'owner', 'cooperative'];
+    }
+
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false; // Disallow querying all users
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
+      allow delete: if isOwner(userId);
+    }
+
+    // Bookings Validation & Access
+    function isValidBooking(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.userId is string && data.userId == request.auth.uid &&
+             data.equipmentId is string && data.equipmentId.size() <= 128 &&
+             data.totalPrice is number && data.totalPrice >= 0 &&
+             data.status in ['pending', 'confirmed', 'in_progress', 'completed', 'cancelled'];
+    }
+
+    match /bookings/{bookingId} {
+      allow get: if isSignedIn() && (existing().userId == request.auth.uid || (existing().keys().hasAny(['ownerId']) && existing().ownerId == request.auth.uid));
+      allow list: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(bookingId) && isValidBooking(incoming());
+      allow update: if isSignedIn() && isValidId(bookingId) && 
+                    (existing().userId == request.auth.uid || (existing().keys().hasAny(['ownerId']) && existing().ownerId == request.auth.uid)) &&
+                    incoming().userId == existing().userId;
+      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
+    }
+
+    // Orders Validation & Access
+    function isValidOrder(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.userId is string && data.userId == request.auth.uid &&
+             data.total is number && data.total >= 0 &&
+             data.status in ['placed', 'processing', 'shipped', 'delivered', 'cancelled'];
+    }
+
+    match /orders/{orderId} {
+      allow get: if isSignedIn() && existing().userId == request.auth.uid;
+      allow list: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(orderId) && isValidOrder(incoming());
+      allow update: if isSignedIn() && isValidId(orderId) && existing().userId == request.auth.uid && incoming().userId == existing().userId;
+      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
+    }
+
+    // Equipment Validation & Access
+    function isValidEquipment(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 150 &&
+             data.ownerId is string && data.ownerId == request.auth.uid &&
+             data.pricePerDay is number && data.pricePerDay >= 0;
+    }
+
+    match /equipment/{equipmentId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(equipmentId) && isValidEquipment(incoming());
+      allow update: if isSignedIn() && isValidId(equipmentId) && existing().ownerId == request.auth.uid && isValidEquipment(incoming());
+      allow delete: if isSignedIn() && existing().ownerId == request.auth.uid;
+    }
+  }
+}

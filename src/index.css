@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  :root {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: normal;
+    font-size: 16px;
+  }
+  /* Fluid mobile viewport typography scaling */
+  @media (max-width: 640px) {
+    :root {
+      font-size: 14.5px;
+    }
+  }
+  :root.text-lg-mode {
+    font-size: 18px;
+  }
+  @media (max-width: 640px) {
+    :root.text-lg-mode {
+      font-size: 16px;
+    }
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Clean custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}

@@ -1,0 +1,119 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role, contact info, and farm details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 25 },
+        "email": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "enum": ["farmer", "owner", "cooperative"] },
+        "location": { "type": "string", "maxLength": 100 },
+        "villageOrDistrict": { "type": "string", "maxLength": 100 },
+        "avatar": { "type": "string", "maxLength": 500000 },
+        "rating": { "type": "number" },
+        "totalTransactions": { "type": "number" },
+        "verified": { "type": "boolean" },
+        "memberSince": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "phone", "role"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Machine or drone service booking reservation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userName": { "type": "string", "maxLength": 100 },
+        "userPhone": { "type": "string", "maxLength": 25 },
+        "userVillage": { "type": "string", "maxLength": 100 },
+        "equipmentId": { "type": "string", "maxLength": 128 },
+        "equipmentName": { "type": "string", "maxLength": 150 },
+        "equipmentImage": { "type": "string", "maxLength": 500 },
+        "operationType": { "type": "string", "maxLength": 100 },
+        "acreage": { "type": "number" },
+        "startDate": { "type": "string", "maxLength": 30 },
+        "endDate": { "type": "string", "maxLength": 30 },
+        "totalDays": { "type": "number" },
+        "dailyRate": { "type": "number" },
+        "operatorFee": { "type": "number" },
+        "transportFee": { "type": "number" },
+        "totalPrice": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "in_progress", "completed", "cancelled"] },
+        "trackingStatus": { "type": "string", "maxLength": 100 },
+        "estimatedArrival": { "type": "string", "maxLength": 100 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "equipmentId", "totalPrice", "status"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Marketplace purchase order for farm supplies",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "discount": { "type": "number" },
+        "total": { "type": "number" },
+        "status": { "type": "string", "enum": ["placed", "processing", "shipped", "delivered", "cancelled"] },
+        "deliveryAddress": { "type": "string", "maxLength": 200 },
+        "contactPhone": { "type": "string", "maxLength": 25 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "total", "status"]
+    },
+    "Equipment": {
+      "title": "Equipment",
+      "description": "Equipment available for rental or shared pooling",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "ownerId": { "type": "string", "maxLength": 128 },
+        "ownerName": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "hp": { "type": "number" },
+        "pricePerDay": { "type": "number" },
+        "available": { "type": "boolean" },
+        "location": { "type": "string", "maxLength": 100 },
+        "village": { "type": "string", "maxLength": 100 },
+        "distanceKm": { "type": "number" },
+        "image": { "type": "string", "maxLength": 500 },
+        "rating": { "type": "number" },
+        "healthScore": { "type": "number" },
+        "companyFleet": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "ownerId", "pricePerDay"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private and public user profiles"
+    },
+    "/bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "Equipment and drone booking reservations"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Farm supplies marketplace orders"
+    },
+    "/equipment/{equipmentId}": {
+      "schema": { "$ref": "#/entities/Equipment" },
+      "description": "Equipment fleet inventory"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="silverGrad" cx="35%" cy="25%" r="85%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#e9ecef" />
+      <stop offset="55%" stop-color="#c6cbd2" />
+      <stop offset="85%" stop-color="#9da3aa" />
+      <stop offset="100%" stop-color="#8a9098" />
+    </radialGradient>
+  </defs>
+  <!-- Background circular silver metallic disk -->
+  <circle cx="200" cy="200" r="190" fill="url(#silverGrad)" />
+  <!-- Silhouette head -->
+  <circle cx="200" cy="162" r="62" fill="#223241" />
+  <!-- Silhouette body/shoulders arc -->
+  <path d="M 88 336 C 104 266 148 238 200 238 C 252 238 296 266 312 336 C 280 366 242 384 200 384 C 158 384 120 366 88 336 Z" fill="#223241" />
+</svg>

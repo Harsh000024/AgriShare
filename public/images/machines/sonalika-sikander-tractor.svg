@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sonalikaSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="tractorBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="tractorBlueDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="tireRubber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="yellowRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="canopyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <filter id="tractorShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Sky and Field -->
+  <rect width="800" height="340" fill="url(#sonalikaSky)"/>
+  <rect y="330" width="800" height="170" fill="#4d7c0f"/>
+  <ellipse cx="410" cy="455" rx="360" ry="26" fill="#14532d" opacity="0.6"/>
+
+  <!-- Tractor Profile (Side/3-Quarter View facing left) -->
+  <g filter="url(#tractorShadow)" transform="translate(40, 20)">
+    <!-- Rear Left Mudguard / Fender -->
+    <path d="M 440 280 C 440 180 530 160 620 170 L 620 280 Z" fill="url(#tractorBlueDark)"/>
+
+    <!-- Exhaust Pipe & Snorkel -->
+    <rect x="330" y="70" width="12" height="150" rx="3" fill="#0f172a"/>
+    <ellipse cx="336" cy="68" rx="10" ry="5" fill="#475569"/>
+    <!-- Chrome rain cap on top of exhaust -->
+    <path d="M 326 68 L 346 62 L 346 66 L 326 72 Z" fill="#94a3b8"/>
+    <!-- Air pre-cleaner bowl -->
+    <rect x="300" y="110" width="10" height="80" fill="#1e293b"/>
+    <ellipse cx="305" cy="105" rx="14" ry="10" fill="#0284c7" opacity="0.85"/>
+
+    <!-- Deluxe Weather Canopy / ROPS Rollbar -->
+    <!-- Steel Support Legs -->
+    <path d="M 460 270 L 440 100 L 590 100 L 610 270" stroke="#0f172a" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Fiberglass Canopy Roof -->
+    <path d="M 400 95 C 440 85 580 85 640 100 L 635 112 C 580 98 440 98 405 107 Z" fill="url(#canopyGrad)" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <!-- Operator Seat & Steering Wheel -->
+    <rect x="490" y="190" width="45" height="40" rx="6" fill="#020617"/>
+    <rect x="525" y="150" width="12" height="50" rx="4" fill="#020617"/>
+    <!-- Steering column & wheel -->
+    <line x1="440" y1="210" x2="425" y2="165" stroke="#334155" stroke-width="7"/>
+    <ellipse cx="420" cy="160" rx="16" ry="6" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+
+    <!-- Engine Bonnet / Hood (Streamlined Sonalika Sikander Styling) -->
+    <path d="M 200 230 C 200 180 230 170 360 170 L 450 170 L 450 280 L 220 280 C 200 280 200 250 200 230 Z" fill="url(#tractorBlue)"/>
+    <!-- Front Sloped Nose Grille -->
+    <path d="M 200 210 L 180 230 L 180 275 L 220 280 Z" fill="#1e293b"/>
+    <polygon points="183,235 198,218 198,272 183,268" fill="#475569"/>
+    <!-- Front Dual Headlights (Gleaming white/yellow) -->
+    <circle cx="192" cy="235" r="9" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+    <circle cx="192" cy="235" r="5" fill="#ffffff"/>
+    <circle cx="195" cy="255" r="7" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+
+    <!-- Sonalika Chrome Branding Stripe & Emblem on Hood -->
+    <rect x="220" y="215" width="180" height="20" rx="3" fill="#ffffff"/>
+    <text x="310" y="230" font-family="Arial, sans-serif" font-weight="900" font-size="12" fill="#1d4ed8" text-anchor="middle">SONALIKA SIKANDER</text>
+    <rect x="220" y="238" width="110" height="8" rx="2" fill="#facc15"/>
+    <text x="275" y="245" font-family="Arial, sans-serif" font-weight="800" font-size="7" fill="#0f172a" text-anchor="middle">DI 75 4WD HEAVY DUTY</text>
+
+    <!-- Side Heat Extraction Vents -->
+    <line x1="330" y1="230" x2="350" y2="230" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="330" y1="236" x2="350" y2="236" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="330" y1="242" x2="350" y2="242" stroke="#0f172a" stroke-width="2.5"/>
+
+    <!-- Front Counterweight Iron Bumper (Weights for heavy traction) -->
+    <rect x="150" y="270" width="35" height="35" rx="3" fill="#0f172a"/>
+    <line x1="158" y1="270" x2="158" y2="305" stroke="#334155" stroke-width="2"/>
+    <line x1="166" y1="270" x2="166" y2="305" stroke="#334155" stroke-width="2"/>
+    <line x1="174" y1="270" x2="174" y2="305" stroke="#334155" stroke-width="2"/>
+
+    <!-- Front Axle & 4WD Differential Hub -->
+    <rect x="235" y="280" width="20" height="40" fill="#1e293b"/>
+
+    <!-- Heavy Front Wheel (4WD Deep Tread Tire) -->
+    <g transform="translate(245, 330)">
+      <circle cx="0" cy="0" r="54" fill="url(#tireRubber)"/>
+      <!-- Deep Lug Cleat Treads -->
+      <path d="M -54 0 L -42 -8 L -42 8 Z M 54 0 L 42 -8 L 42 8 Z M 0 -54 L -8 -42 L 8 -42 Z M 0 54 L -8 42 L 8 42 Z M -38 -38 L -30 -44 L -24 -32 Z M 38 38 L 30 44 L 24 32 Z M -38 38 L -44 30 L -32 24 Z M 38 -38 L 44 -30 L 32 -24 Z" fill="#475569"/>
+      <!-- Bright Yellow Steel Rim -->
+      <circle cx="0" cy="0" r="34" fill="url(#yellowRim)" stroke="#ca8a04" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#1e293b"/>
+      <!-- Wheel Bolts (8-bolt 4WD heavy pattern) -->
+      <circle cx="0" cy="-8" r="2.5" fill="#ffffff"/>
+      <circle cx="0" cy="8" r="2.5" fill="#ffffff"/>
+      <circle cx="-8" cy="0" r="2.5" fill="#ffffff"/>
+      <circle cx="8" cy="0" r="2.5" fill="#ffffff"/>
+      <circle cx="-6" cy="-6" r="2.5" fill="#ffffff"/>
+      <circle cx="6" cy="6" r="2.5" fill="#ffffff"/>
+      <circle cx="-6" cy="6" r="2.5" fill="#ffffff"/>
+      <circle cx="6" cy="-6" r="2.5" fill="#ffffff"/>
+    </g>
+
+    <!-- Side Footstep & Fuel Tank -->
+    <rect x="325" y="285" width="110" height="35" rx="5" fill="#0f172a"/>
+    <rect x="345" y="322" width="65" height="6" rx="2" fill="#94a3b8"/>
+
+    <!-- Massive Rear Drive Wheel (Heavy Ag Traction Tire) -->
+    <g transform="translate(540, 310)">
+      <circle cx="0" cy="0" r="95" fill="url(#tireRubber)"/>
+      <!-- Aggressive R-1 High-Bar Lug Treads -->
+      <path d="M -95 0 L -76 -14 L -76 14 Z M 95 0 L 76 -14 L 76 14 Z M 0 -95 L -14 -76 L 14 -76 Z M 0 95 L -14 76 L 14 76 Z M -67 -67 L -55 -77 L -45 -57 Z M 67 67 L 55 77 L 45 57 Z M -67 67 L -77 55 L -57 45 Z M 67 -67 L 77 -55 L 57 -45 Z M -25 -92 L -15 -80 L -30 -75 Z M 25 92 L 15 80 L 30 75 Z M -92 25 L -80 15 L -75 30 Z M 92 -25 L 80 -15 L 75 -30 Z" fill="#475569"/>
+      <!-- Bright Sonalika Yellow Rim -->
+      <circle cx="0" cy="0" r="62" fill="url(#yellowRim)" stroke="#a16207" stroke-width="3"/>
+      <!-- Inner planetary gear hub -->
+      <circle cx="0" cy="0" r="26" fill="#1e293b"/>
+      <circle cx="0" cy="0" r="10" fill="#020617"/>
+      <!-- Ring of heavy wheel lug nuts -->
+      <circle cx="0" cy="-18" r="3.5" fill="#f8fafc"/>
+      <circle cx="0" cy="18" r="3.5" fill="#f8fafc"/>
+      <circle cx="-18" cy="0" r="3.5" fill="#f8fafc"/>
+      <circle cx="18" cy="0" r="3.5" fill="#f8fafc"/>
+      <circle cx="-13" cy="-13" r="3.5" fill="#f8fafc"/>
+      <circle cx="13" cy="13" r="3.5" fill="#f8fafc"/>
+      <circle cx="-13" cy="13" r="3.5" fill="#f8fafc"/>
+      <circle cx="13" cy="-13" r="3.5" fill="#f8fafc"/>
+    </g>
+
+    <!-- Rear 3-Point Hitch Lower Link & Drawbar -->
+    <polygon points="635,325 680,345 680,355 635,335" fill="#475569"/>
+    <circle cx="678" cy="350" r="6" fill="#ef4444"/>
+  </g>
+
+  <!-- Spec badge -->
+  <g transform="translate(40, 40)">
+    <rect width="210" height="54" rx="10" fill="#0f172a" opacity="0.9"/>
+    <text x="16" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">Sonalika Sikander DI 75</text>
+    <text x="16" y="42" font-family="Arial, sans-serif" font-size="11" fill="#60a5fa">75 HP • 4WD Heavy Duty • CRDS</text>
+  </g>
+</svg>

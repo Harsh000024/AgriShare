@@ -1,0 +1,6 @@
+{
+  "name": "AgriShare",
+  "description": "An AI-powered agricultural resource sharing network and marketplace platform connecting farmers, equipment owners, and input suppliers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

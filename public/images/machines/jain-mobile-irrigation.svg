@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="irrigSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="lushField" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="drumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="jainGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="waterJet" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="dropletMist" cx="70%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#7dd3fc" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="irrigationShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Sky and Crop Field -->
+  <rect width="800" height="330" fill="url(#irrigSky)"/>
+  <rect y="320" width="800" height="180" fill="url(#lushField)"/>
+
+  <!-- Sprinkler Water Arc Spray (Reaching across the sky) -->
+  <path d="M 640 210 Q 500 50 200 90 Q 60 120 10 260" fill="none" stroke="url(#waterJet)" stroke-width="18" stroke-linecap="round" opacity="0.85"/>
+  <path d="M 640 210 Q 520 80 250 120 Q 100 150 40 290" fill="none" stroke="url(#waterJet)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <ellipse cx="280" cy="110" rx="140" ry="45" fill="url(#dropletMist)"/>
+  <ellipse cx="120" cy="190" rx="90" ry="50" fill="url(#dropletMist)"/>
+
+  <!-- Water droplets sparkles -->
+  <circle cx="210" cy="95" r="3" fill="#ffffff" opacity="0.9"/>
+  <circle cx="260" cy="120" r="4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="160" cy="140" r="3.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="340" cy="110" r="2.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="100" cy="220" r="3" fill="#ffffff" opacity="0.85"/>
+
+  <!-- Mobile Reel Unit Assembly -->
+  <g filter="url(#irrigationShadow)" transform="translate(60, 40)">
+    <!-- Trailer Chassis & Tow Hitch Drawbar -->
+    <path d="M 120 330 L 480 330 L 480 310 L 220 310 Z" fill="#334155"/>
+    <polygon points="120,330 60,345 60,355 130,340" fill="#475569"/>
+    <circle cx="55" cy="350" r="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="2"/>
+    <!-- Ground Stabilizer Outrigger Jacks -->
+    <rect x="180" y="325" width="12" height="40" fill="#1e293b"/>
+    <rect x="165" y="360" width="42" height="8" rx="2" fill="#0f172a"/>
+    <rect x="440" y="325" width="12" height="40" fill="#1e293b"/>
+    <rect x="425" y="360" width="42" height="8" rx="2" fill="#0f172a"/>
+
+    <!-- Trailer Wheels -->
+    <g transform="translate(320, 340)">
+      <circle cx="0" cy="0" r="46" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#facc15" stroke="#a16207" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#334155"/>
+    </g>
+
+    <!-- Main Reel Spool Drum (Side circular frame) -->
+    <circle cx="320" cy="210" r="125" fill="#15803d" stroke="#166534" stroke-width="6"/>
+    <!-- Spool Rim Ribs & Spokes -->
+    <circle cx="320" cy="210" r="110" fill="none" stroke="#facc15" stroke-width="4"/>
+    <line x1="320" y1="90" x2="320" y2="330" stroke="#facc15" stroke-width="4"/>
+    <line x1="200" y1="210" x2="440" y2="210" stroke="#facc15" stroke-width="4"/>
+    <line x1="235" y1="125" x2="405" y2="295" stroke="#facc15" stroke-width="4"/>
+    <line x1="235" y1="295" x2="405" y2="125" stroke="#facc15" stroke-width="4"/>
+
+    <!-- Coiled 450m PE Hose Inside Spool -->
+    <circle cx="320" cy="210" r="92" fill="url(#drumGrad)"/>
+    <!-- Hose coils concentric rings -->
+    <circle cx="320" cy="210" r="82" fill="none" stroke="#334155" stroke-width="4"/>
+    <circle cx="320" cy="210" r="70" fill="none" stroke="#475569" stroke-width="5"/>
+    <circle cx="320" cy="210" r="56" fill="none" stroke="#334155" stroke-width="5"/>
+    <circle cx="320" cy="210" r="42" fill="none" stroke="#475569" stroke-width="4"/>
+    <circle cx="320" cy="210" r="28" fill="#1e293b"/>
+    <circle cx="320" cy="210" r="14" fill="#0284c7"/>
+
+    <!-- Drive Turbine Gearbox on side -->
+    <rect x="220" y="270" width="55" height="45" rx="4" fill="#0f172a"/>
+    <circle cx="245" cy="292" r="10" fill="#f59e0b"/>
+    <!-- Solar panel for computerized rewind controller -->
+    <polygon points="210,130 250,130 240,110 200,110" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/>
+    <line x1="225" y1="130" x2="220" y2="150" stroke="#334155" stroke-width="3"/>
+
+    <!-- Hose guide scrolling carriage arm at rear -->
+    <path d="M 420 220 L 520 270 L 520 290" stroke="#334155" stroke-width="6" fill="none"/>
+    <circle cx="520" cy="275" r="12" fill="#0284c7"/>
+
+    <!-- Uncoiling Hose leading to Big Gun Sprinkler Cart -->
+    <path d="M 520 280 Q 560 295 620 300" stroke="#0f172a" stroke-width="14" fill="none"/>
+
+    <!-- Mobile Big Gun Sprinkler Cart -->
+    <g transform="translate(610, 240)">
+      <!-- Sprinkler Cart Frame & Wheels -->
+      <line x1="-10" y1="80" x2="40" y2="80" stroke="#15803d" stroke-width="6"/>
+      <circle cx="-10" cy="80" r="16" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+      <circle cx="40" cy="80" r="16" fill="#1e293b" stroke="#0f172a" stroke-width="2"/>
+      <!-- Vertical riser pipe -->
+      <rect x="12" y="10" width="10" height="70" fill="#0284c7"/>
+      <!-- High-Pressure Big Gun Nozzle (Shooting water arc upwards) -->
+      <polygon points="12,10 32,-15 44,-10 18,18" fill="#eab308" stroke="#ca8a04" stroke-width="1.5"/>
+      <rect x="30" y="-20" width="14" height="8" rx="2" fill="#ef4444" transform="rotate(-35 30 -20)"/>
+    </g>
+
+    <!-- Jain Sinchan Brand Plaque on Reel Side -->
+    <rect x="250" y="195" width="140" height="30" rx="5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <text x="320" y="210" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#15803d" text-anchor="middle">JAIN IRRIGATION</text>
+    <text x="320" y="221" font-family="Arial, sans-serif" font-weight="700" font-size="8" fill="#0284c7" text-anchor="middle">SINCHAN MOBILE 450M</text>
+  </g>
+
+  <!-- Spec badge -->
+  <g transform="translate(40, 40)">
+    <rect width="220" height="54" rx="10" fill="#0f172a" opacity="0.9"/>
+    <text x="16" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">Jain Mobile Hose Reel</text>
+    <text x="16" y="42" font-family="Arial, sans-serif" font-size="11" fill="#38bdf8">450m PE Hose • 65 m³/h Gun Sprinkler</text>
+  </g>
+</svg>
